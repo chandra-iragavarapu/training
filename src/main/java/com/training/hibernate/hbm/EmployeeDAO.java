@@ -29,7 +29,7 @@ public class EmployeeDAO {
 
         // employeeDAO.updateEmployee(1, "Test 1 Updated");
 
-        employeeDAO.deleteEmployee(2);
+      //  employeeDAO.deleteEmployee(2);
 
         employeeDAO.listEmployees();
     }

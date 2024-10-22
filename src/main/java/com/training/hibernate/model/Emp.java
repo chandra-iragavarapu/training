@@ -1,29 +1,35 @@
 package com.training.hibernate.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="emp")
 public class Emp {
 
-    public Emp(String name, String addr1, String email, int departmentId) {
+    public Emp(String name, String addr1, String email, Department department) {
         this.name = name;
         this.email = email;
         this.addr1 = addr1;
-        this.department_id = departmentId;
+        this.department = department;
     }
 
     public Emp() {
         
     }
-
-    private int id;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
 
     private String name;
 
     public void setName(String name) {
-        this.name = name;        
+        this.name = name;
     }
 
     public String getName(){
@@ -33,7 +39,7 @@ public class Emp {
     private String addr1;
 
     public void setAddr1(String addr1) {
-        this.addr1 = addr1;        
+        this.addr1 = addr1;
     }
 
     public String getAddr1(){
@@ -43,28 +49,29 @@ public class Emp {
     private String email;
 
     public void setEmail(String email) {
-        this.email = email;        
+        this.email = email;
     }
 
     public String getEmail(){
         return email;
     }
 
-    private int department_id;
+    @OneToOne(targetEntity=Department.class)
+    private Department department;
 
-    public void setDepartmentId(int departmentId) {
-        this.department_id = departmentId;        
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
-    public int getDepartmentId(){
-        return department_id;
+    public Department getDepartment(){
+        return department;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;        
     }
 
-    public int getId(){
+    public Long getId(){
         return id;
     }
     

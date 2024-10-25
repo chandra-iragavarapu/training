@@ -1,30 +1,28 @@
-package com.training.hibernate.model;
+package com.training.hibernate.xml;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="emp")
-public class Emp {
+@Table(name="employee_xml")
+public class Employee {
 
-    public Emp(String name, String addr1, String email, Department department) {
+    public Employee(String name, String addr1, String email, Integer department_id) {
         this.name = name;
         this.email = email;
         this.addr1 = addr1;
-        this.department = department;
+        this.department_id = department_id;
     }
 
-    public Emp() {
+    public Employee() {
         
     }
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     private String name;
 
@@ -56,22 +54,22 @@ public class Emp {
         return email;
     }
 
-    @OneToOne(targetEntity=Department.class)
-    private Department department;
+    
+    private Integer department_id;
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartmentId(Integer department) {
+        this.department_id = department;
     }
 
-    public Department getDepartment(){
-        return department;
+    public Integer getDepartmentId(){
+        return department_id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;        
     }
 
-    public Long getId(){
+    public Integer getId(){
         return id;
     }
     

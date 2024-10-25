@@ -11,13 +11,13 @@ public class EmployeeDAO {
         List<Employees> employeeList = new ArrayList<Employees>();
 
         Connection conn = DbConnection.connect();
-        String sql = "select id, name, email, mobile_number from employees";
+        String sql = "select id, name, email, mobile from employees";
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()) {
                 Employees employees = new Employees(rs.getInt("id"), rs.getString("name"),
-                        rs.getString("email"), rs.getString("mobile_number"));
+                        rs.getString("email"), rs.getString("mobile"));
                 employeeList.add(employees);
                // employeeList.add(rs.getString("name"));
             }

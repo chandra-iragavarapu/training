@@ -6,7 +6,7 @@
     <session-factory>
         <!-- JDBC Database connection settings -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/employee</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/training</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"></property>
 
@@ -17,11 +17,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
-        <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Entities -->
-        <!-- <mapping class="com.training.hibernate.model.Emp"/> -->
-        <mapping resource="emp.hbm.xml" />
+        <mapping resource="employee.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

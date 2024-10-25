@@ -7,10 +7,10 @@ public class Employees {
         return name;
     }
 
-    public Employees(int id, String name, String mobile_number, String email) {
+    public Employees(int id, String name, String mobile, String email) {
         this.name = name;
         this.id = id;
-        this.mobile_number = mobile_number;
+        this.mobile = mobile;
         this.email = email;
     }
 
@@ -35,12 +35,12 @@ public class Employees {
 
     private int id;
 
-    public String getMobile_number() {
-        return mobile_number;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setMobile_number(String mobile_number) {
-        this.mobile_number = mobile_number;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public String getEmail() {
@@ -51,7 +51,7 @@ public class Employees {
         this.email = email;
     }
 
-    private String mobile_number;
+    private String mobile;
 
     private String email;
 

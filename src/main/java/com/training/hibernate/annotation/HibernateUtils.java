@@ -1,4 +1,4 @@
-package com.training.hibernate.config;
+package com.training.hibernate.annotation;
 
 import java.util.Properties;
 
@@ -8,8 +8,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
-
-import com.training.hibernate.model.Emp;
 
 public class HibernateUtils {
 
@@ -22,7 +20,7 @@ public class HibernateUtils {
                 Configuration config = new Configuration();
                 Properties properties = new Properties();
                 properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-                properties.put(Environment.URL, "jdbc:mysql://localhost:3306/employee");
+                properties.put(Environment.URL, "jdbc:mysql://localhost:3306/training");
                 properties.put(Environment.USER, "root");
                 properties.put(Environment.PASS, "");
                 properties.put(Environment.SHOW_SQL, "true");
@@ -33,7 +31,7 @@ public class HibernateUtils {
 
                 config.setProperties(properties);
 
-                config.addAnnotatedClass(Emp.class);
+                config.addAnnotatedClass(Employee.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(config.getProperties()).build();
 

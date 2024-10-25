@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbConnection {
 
-    private static final String url ="jdbc:mysql://127.0.0.1:3306/employee?autoReconnect=true&useSSL=false";
+    private static final String url ="jdbc:mysql://127.0.0.1:3306/training?autoReconnect=true&useSSL=false";
     private static final String username = "root";
     private static final String password = "";
 

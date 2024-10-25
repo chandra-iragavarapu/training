@@ -3,10 +3,10 @@
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-mapping>
-    <class name = "com.training.hibernate.model.Emp" table="emp" >
+    <class name = "com.training.hibernate.xml.Employee" table="employee_xml" >
 
     <meta attribute = "class-description">
-        this is class for my emp table
+        this is class for my employee table
     </meta>
 
     <id name = "id" type="int" column ="id" >
